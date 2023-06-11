@@ -1,10 +1,13 @@
 module.exports = {
-  content: ["./layouts/**/*.{html,js}"],
-  theme: {
-  },
-  plugins: [
-    require("@tailwindcss/forms")({
-      strategy: "class",
-    }),
-  ],
+    content: ["./layouts/**/*.{html,js}", "./content/**/*.md"],
+    theme: {
+	container: {
+	    center: true
+	}
+    },
+    plugins: [
+	require("@tailwindcss/forms")({
+	    strategy: "class",
+	}),
+    ]
 };

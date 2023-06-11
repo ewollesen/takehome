@@ -1,9 +1,10 @@
 {{ partial "header.html" . }}
 
-<div class="flex flex-col items-center">
+<main class="container">
+  <div class="flex flex-col items-center">
     {{ if .Params.images }}
     <div>
-        <img width="736" height="490" src="{{ index (.Params.images) 0 }}" />
+      <img width="736" height="490" src="{{ index (.Params.images) 0 }}" />
     </div>
     {{ end }}
 
@@ -12,24 +13,25 @@
     {{ $date := .Params.date.Format "Jan 2, 2006" }}
     {{ if .Params.author }}
     <p>
-        By {{ .Params.author }}
-        {{ if (gt .Params.date 0) }}
-        on {{ $date }}
-        {{ end }}
+      By {{ .Params.author }}
+      {{ if (gt .Params.date 0) }}
+      on {{ $date }}
+      {{ end }}
     </p>
     {{ end }}
     <main>
 
-        {{ if .Params.toc }}
-        <h2>Table of Contents</h2>
-        <aside>
-            {{.TableOfContents}}
-        </aside>
-        {{ end }}
+      {{ if .Params.toc }}
+      <h2>Table of Contents</h2>
+      <aside>
+        {{.TableOfContents}}
+      </aside>
+      {{ end }}
 
 
-        {{ .Content }}
+      {{ .Content }}
     </main>
 
     {{ partial "footer.html" . }}
-</div>
+  </div>
+</main>
